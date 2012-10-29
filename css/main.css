@@ -76,6 +76,7 @@ textarea {
 
 #site {
   padding-top: 14px;
+  float: left;
 }
 
 #logo {
@@ -96,6 +97,22 @@ textarea {
 
 #nav {
   float: right;
+  height: 50px;
+}
+#nav a {
+  display: block;
+  float: left;
+  padding: 13px 7px 17px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  border-top: 4px solid #ccc;
+  margin: 0;
+  border-position: inside;
+}
+#nav a:hover {
+  border-color: #37c;
+  color: #000;
 }
 
 h1, h2, h3 {

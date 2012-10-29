@@ -26,7 +26,9 @@
         <figure id="logo"></figure>
         <div id="site"><a href="<?php echo get_bloginfo('siteurl') ?>">SG Bergmann Borsig e.V.</a></div>
         <nav id="nav">
-
+          <?php foreach (wp_get_nav_menu_items('main-menu') as $item): ?>
+            <a href="<?php echo $item->url ?>"><?php echo $item->title ?></a>
+          <?php endforeach ?>
         </nav>
       </div>
     </header>
