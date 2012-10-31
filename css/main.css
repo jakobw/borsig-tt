@@ -62,9 +62,17 @@ textarea {
 
 
 
+body {
+  background: #eee;
+}
+
 #main, #header_center {
   margin: 0 auto;
   width: 1000px;
+}
+#main {
+  background: #fff;
+  padding: 0 10px;
 }
 
 #header {
@@ -72,6 +80,8 @@ textarea {
   background-color: #eee;
   background-image: -webkit-linear-gradient(top, #fff, #ebebeb);
   box-shadow: 0 0 5px 2px #ccc;
+  z-index: 2;
+  position: relative;
 }
 
 #site {
@@ -110,13 +120,20 @@ textarea {
   margin: 0;
   border-position: inside;
 }
-#nav a:hover {
+#nav a:hover, #nav .active {
   border-color: #37c;
   color: #000;
 }
 
+.page_hdln {
+  padding: 10px 0 0;
+  color: #444;
+}
+
 h1, h2, h3 {
-  font-family: Arial, sans-serif;
+  font-family: "elena-web", Elena, Georgia, serif;
+  font-weight: normal;
+  margin: 0;
 }
 
 

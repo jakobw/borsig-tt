@@ -27,7 +27,9 @@
         <div id="site"><a href="<?php echo get_bloginfo('siteurl') ?>">SG Bergmann Borsig e.V.</a></div>
         <nav id="nav">
           <?php foreach (wp_get_nav_menu_items('main-menu') as $item): ?>
-            <a href="<?php echo $item->url ?>"><?php echo $item->title ?></a>
+            <a href="<?php echo $item->url ?>" class="<?php echo $post->ID == $item->object_id ? 'active' : '' ?>">
+              <?php echo $item->title ?>
+            </a>
           <?php endforeach ?>
         </nav>
       </div>
