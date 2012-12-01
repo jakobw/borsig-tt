@@ -136,6 +136,19 @@ h1, h2, h3 {
   margin: 0;
 }
 
+#team table {
+  width: 30%;
+}
+#team table td {
+  padding: 5px;
+}
+#team table .diff {
+  text-align: right;
+}
+#team table tr:nth-child(2n+1) {
+  background-color: #eee;
+}
+
 
 
 

@@ -1,0 +1,12 @@
+<h1>SG Bergmann Borsig III</h1>
+<div id="team">
+  <table>
+    <?php foreach ($team['members'] as $member): ?>
+      <tr>
+        <td class="position"><?php echo $member['position'] ?></td>
+        <td class="name"><?php echo $member['name'] ?></td>
+        <td class="diff"><?php echo $member['diff'] ?></td>
+      </tr>
+    <?php endforeach ?>
+  </table>
+</div>
