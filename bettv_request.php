@@ -4,16 +4,18 @@ class BettvRequest {
           $UPDATE_HOURS = 24,
           $TMP_DIR = 'tmp_xml';
 
-  public function getTeam($params) {
+  function __construct($params) {
     $file = __DIR__ . DS . $this->TMP_DIR . DS . "${params['team']}_${params['staffel']}.xml";
 
-    $data = $this->_fetchTeamData($params, $file);
+    $this->_data = $this->_fetchTeamData($params, $file);
+  }
 
-    if ($data) {
+  public function getTeam() {
+    if ($this->_data) {
       $team = array();
       $team['members'] = array();
 
-      foreach ($data->Content->Bilanz->children() as $member) {
+      foreach ($this->_data->Content->Bilanz->children() as $member) {
         $team['members'][] = array(
           'position' => (string) $member->Position,
           'name' => (string) $member->Spielername,
