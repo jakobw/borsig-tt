@@ -1,14 +1,12 @@
 <?php
 // Template Name: Mannschaften
 get_header();
-require 'bettv_request.php';
 
-$req = new BettvRequest();
-$team = $req->getTeam(array(
-  'staffel' => 3914,
-  'team' => 25323,
+$teams = get_posts(array(
+  'post_type' => 'team',
+  'numberposts' => -1,
 ));
 
-include 'views/mannschaft.phtml';
+include 'views/mannschaften_page.phtml';
 
 get_footer();
