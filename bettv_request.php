@@ -29,8 +29,22 @@ class BettvRequest {
     }
   }
 
-  public function getTable($id, $ownTeam) {
+  public function getTable() {
+    if ($this->_data) {
+      $teams = array();
 
+      foreach ($this->_data->Content->Tabelle->children() as $team) {
+        $teams[] = array(
+          'name' => (string) $team->Mannschaft,
+          'diff_points' => $team->PunktePlus . ' : ' . $team->PunkteMinus,
+          'diff_matches' => $team->SpielePlus . ' : ' . $team->SpieleMinus,
+        );
+      }
+
+      return $teams;
+    } else {
+      return false;
+    }
   }
 
   private function _fetchTeamData($params, $file) {
@@ -41,6 +55,7 @@ class BettvRequest {
         'SportArt' => 96, // 96 == tischtennis
         'Area' => 'TeamReport',
         'WettID' => $params['staffel'],
+        'Runde' => date('m') > 8 ? 1 : 2,
       ));
 
       $response = wp_remote_get($url);

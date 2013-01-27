@@ -8,6 +8,7 @@ $req = new BettvRequest(array(
   'team' => $post->fields['team_id'],
 ));
 $team = $req->getTeam();
+$table = $req->getTable();
 
 include 'views/mannschaft.phtml';
 

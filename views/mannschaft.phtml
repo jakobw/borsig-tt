@@ -1,12 +1,30 @@
 <h1><?php echo $post->post_title ?></h1>
 <div id="team">
-  <table>
-    <?php foreach ($team['members'] as $member): ?>
-      <tr>
-        <td class="position"><?php echo $member['position'] ?></td>
-        <td class="name"><?php echo $member['name'] ?></td>
-        <td class="diff"><?php echo $member['diff'] ?></td>
-      </tr>
-    <?php endforeach ?>
-  </table>
+  <div class="team">
+    <table class="zebra">
+      <h2>Aufstellung</h2>
+      <?php foreach ($team['members'] as $member): ?>
+        <tr>
+          <td class="position"><?php echo $member['position'] ?></td>
+          <td class="name"><?php echo $member['name'] ?></td>
+          <td class="diff"><?php echo $member['diff'] ?></td>
+        </tr>
+      <?php endforeach ?>
+    </table>
+  </div>
+
+  <div class="table">
+    <h2>Tabelle</h2>
+    <table class="zebra">
+      <?php foreach ($table as $team): ?>
+        <tr class="<?php if (preg_match('/borsig/i', $team['name'])): ?>own<?php endif ?>">
+          <td><?php echo $team['name'] ?></td>
+          <td><?php echo $team['diff_points'] ?></td>
+          <td><?php echo $team['diff_matches'] ?></td>
+        </tr>
+      <?php endforeach ?>
+    </table>
+  </div>
+
+  <div class="clearfix"></div>
 </div>

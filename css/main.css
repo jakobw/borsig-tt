@@ -136,8 +136,16 @@ h1, h2, h3 {
   margin: 0;
 }
 
-#team table {
-  width: 30%;
+#team .team {
+  width: 33%;
+  float: left;
+}
+#team .table .own {
+  background-color: #acf;
+}
+#team .table {
+  width: 66%;
+  float: right;
 }
 #team table td {
   padding: 5px;
@@ -145,7 +153,7 @@ h1, h2, h3 {
 #team table .diff {
   text-align: right;
 }
-#team table tr:nth-child(2n+1) {
+.zebra tr:nth-child(2n+1) {
   background-color: #eee;
 }
 
