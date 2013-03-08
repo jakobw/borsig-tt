@@ -169,6 +169,10 @@ h1, h2, h3 {
 #news .pre .more {
   text-decoration: none;
 }
+.news .article-data, .pre .article-data {
+  color: #777;
+  font-style: italic;
+}
 
 
 
