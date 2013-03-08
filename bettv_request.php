@@ -47,6 +47,27 @@ class BettvRequest {
     }
   }
 
+  public function getResults() {
+    if ($this->_data) {
+      $results = array();
+
+      foreach ($this->_data->Content->Spielplan->children() as $result) {
+        if ((string) $result->Ergebnis !== 'Vorbericht') {
+          $home = strpos($result->Heimmannschaft, 'Borsig') !== false;
+          $results[] = array(
+            'home' => $home,
+            'opponent' => (string) ($home ? $result->Gastmannschaft : $result->Heimmannschaft),
+            'date' => (string) $result->Datum,
+            'score' => (string) $result->Ergebnis,
+            'nr' => (int) $result->Nr,
+          );
+        }
+      }
+
+      return $results;
+    } else return false;
+  }
+
   private function _fetchTeamData($params, $file) {
     if (!file_exists($file) || time() - filemtime($file) > $this->UPDATE_HOURS * 3600) {
       $url = $this->BASE_URL . '/Export/default.aspx?' . http_build_query(array(

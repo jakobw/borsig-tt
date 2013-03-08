@@ -129,6 +129,10 @@ body {
   padding: 10px 0 0;
   color: #444;
 }
+.page_hdln a {
+  color: inherit;
+  text-decoration: none;
+}
 
 h1, h2, h3 {
   font-family: "elena-web", Elena, Georgia, serif;
@@ -159,21 +163,44 @@ h1, h2, h3 {
 
 #news .pre {
   float: left;
-  width: 50%;
   height: 200px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
 }
-#news .pre h2 a {
+#news .pre h3 a {
   color: inherit;
   text-decoration: none;
 }
 #news .pre .more {
   text-decoration: none;
 }
+#news .news {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
 .news .article-data, .pre .article-data {
   color: #777;
   font-style: italic;
 }
 
+#front .content-left {
+  float: left;
+  width: 550px;
+}
+#front .content-right {
+  float: right;
+  width: 400px;
+}
+.team-results {
+  font-size: 14px;
+}
+.team-results td, .team-results th {
+  padding: 5px 3px;
+}
+.team-results .date {
+  font-style: italic;
+  color: #777;
+}
 
 
 

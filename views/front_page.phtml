@@ -1,0 +1,40 @@
+<div id="front">
+  <div class="content-left">
+    <div id="news">
+      <h2 class="page_hdln"><a href="/news">News</a></h2>
+      <?php foreach ($posts as $post): ?>
+        <article class="pre">
+          <header>
+            <h3><a href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a></h3>
+            <div class="article-data">
+              von <span class="author"><?php echo the_author_meta('user_nicename', $post->post_author) ?></span>
+              <time class="date" pubdate datetime="<?php echo $post->post_date ?>">am <?php echo get_the_date() ?></time>
+            </div>
+          </header>
+          <p class="pre-content">
+            <?php echo apply_filters('the_excerpt', wp_trim_words($post->post_content)) ?>
+          </p>
+        </article>
+      <?php endforeach ?>
+    </div>
+  </div>
+  <div class="content-right">
+    <h2 class="page_hdln">Ergebnisse</h2>
+    <table class="team-results zebra">
+      <?php foreach ($teams as $team): ?>
+        <th colspan="6"><?php echo $team->post_title ?></th>
+        <?php foreach ($team->results as $result): ?>
+          <tr>
+            <td class="date"><?php echo date('d.m.Y', strtotime($result->date)) ?>:</td>
+            <td><?php echo $result->home ? $team->post_title : $result->opponent ?></td>
+            <td><?php echo $result->home ? $result->score_we : $result->score_they ?></td>
+            <td>:</td>
+            <td><?php echo $result->home ? $result->score_they : $result->score_we ?></td>
+            <td><?php echo $result->home ? $result->opponent : $team->post_title ?></td>
+          </tr>
+        <?php endforeach ?>
+      <?php endforeach ?>
+    </table>
+  </div>
+  <div class="clearfix"></div>
+</div>
