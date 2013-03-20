@@ -23,15 +23,8 @@
     <table class="team-results zebra">
       <?php foreach ($teams as $team): ?>
         <th colspan="6"><?php echo $team->post_title ?></th>
-        <?php foreach ($team->results as $result): ?>
-          <tr>
-            <td class="date"><?php echo date('d.m.Y', strtotime($result->date)) ?>:</td>
-            <td><?php echo $result->home ? $team->post_title : $result->opponent ?></td>
-            <td><?php echo $result->home ? $result->score_we : $result->score_they ?></td>
-            <td>:</td>
-            <td><?php echo $result->home ? $result->score_they : $result->score_we ?></td>
-            <td><?php echo $result->home ? $result->opponent : $team->post_title ?></td>
-          </tr>
+        <?php foreach ($team->results as $result): $our_team = $team->post_title ?>
+          <?php include 'views/result.phtml'; ?>
         <?php endforeach ?>
       <?php endforeach ?>
     </table>

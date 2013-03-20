@@ -27,4 +27,11 @@
   </div>
 
   <div class="clearfix"></div>
+
+  <h2>Aktuelle Ergebnisse</h2>
+  <table class="zebra">
+    <?php foreach ($results as $result): $our_team = $post->post_title ?>
+      <?php include 'views/result.phtml' ?>
+    <?php endforeach ?>
+  </table>
 </div>

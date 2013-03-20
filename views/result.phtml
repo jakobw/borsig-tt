@@ -1,0 +1,8 @@
+<tr>
+  <td class="date"><?php echo date('d.m.Y', strtotime($result->date)) ?>:</td>
+  <td><?php echo $result->home ? $our_team : $result->opponent ?></td>
+  <td><?php echo $result->home ? $result->score_we : $result->score_they ?></td>
+  <td>:</td>
+  <td><?php echo $result->home ? $result->score_they : $result->score_we ?></td>
+  <td><?php echo $result->home ? $result->opponent : $our_team ?></td>
+</tr>
