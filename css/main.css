@@ -163,7 +163,6 @@ h1, h2, h3 {
 
 #news .pre {
   float: left;
-  height: 200px;
   border-bottom: 1px solid #ccc;
   padding: 10px 0;
 }
