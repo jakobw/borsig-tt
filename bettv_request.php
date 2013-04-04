@@ -5,7 +5,7 @@ class BettvRequest {
           $TMP_DIR = 'tmp_xml';
 
   function __construct($params) {
-    $file = __DIR__ . DS . $this->TMP_DIR . DS . "${params['team']}_${params['staffel']}.xml";
+    $file = __DIR__ . DIRECTORY_SEPARATOR . $this->TMP_DIR . DIRECTORY_SEPARATOR . "${params['team']}_${params['staffel']}.xml";
 
     $this->_data = $this->_fetchTeamData($params, $file);
   }
