@@ -176,6 +176,7 @@ h1, h2, h3 {
 #news .news {
   padding: 10px 0;
   border-bottom: 1px solid #ccc;
+  text-align: justify;
 }
 .news .article-data, .pre .article-data {
   color: #777;
