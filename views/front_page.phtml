@@ -7,7 +7,7 @@
           <header>
             <h3><a href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a></h3>
             <div class="article-data">
-              von <span class="author"><?php echo the_author_meta('user_nicename', $post->post_author) ?></span>
+              von <span class="author"><?php echo the_author_meta('nickname', $post->post_author) ?></span>
               <time class="date" pubdate datetime="<?php echo $post->post_date ?>">am <?php echo get_the_date() ?></time>
             </div>
           </header>
