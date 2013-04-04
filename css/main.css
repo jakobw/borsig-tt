@@ -201,6 +201,15 @@ h1, h2, h3 {
   font-style: italic;
   color: #777;
 }
+#teams li {
+  padding: 5px 0;
+  list-style: none;
+  margin: 0;
+}
+#teams li a, #teams li a:visited {
+  color: #333;
+  text-decoration: none;
+}
 
 
 

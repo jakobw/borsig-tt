@@ -1,6 +1,6 @@
 <h1>Mannschaften</h1>
 
-<ul>
+<ul id="teams">
   <?php foreach ($teams as $team): ?>
     <li><a href="<?php echo get_permalink($team->ID) ?>"><?php echo $team->post_title ?></a></li>
   <?php endforeach ?>
