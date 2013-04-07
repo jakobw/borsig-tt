@@ -211,6 +211,19 @@ h1, h2, h3 {
   text-decoration: none;
 }
 
+tr:nth-child(2n+1).result.victory {
+  background-color: #ded;
+}
+tr:nth-child(2n).result.victory {
+  background-color: #efe;
+}
+tr:nth-child(2n+1).result.defeat {
+  background-color: #edd;
+}
+tr:nth-child(2n).result.defeat {
+  background-color: #fee;
+}
+
 footer {
   padding-top: 20px;
   text-align: right;

@@ -1,4 +1,4 @@
-<tr>
+<tr class="result <?php echo $result->score_we > $result->score_they ? 'victory' : ($result->score_we == $result->score_they ? '' : 'defeat') ?>">
   <td class="date"><?php echo date('d.m.Y', strtotime($result->date)) ?>:</td>
   <td><?php echo $result->home ? $our_team : $result->opponent ?></td>
   <td><?php echo $result->home ? $result->score_we : $result->score_they ?></td>
