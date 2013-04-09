@@ -22,7 +22,7 @@
     <h2 class="page_hdln">Ergebnisse</h2>
     <table class="team-results zebra">
       <?php foreach ($teams as $team): ?>
-        <th colspan="6"><?php echo $team->post_title ?></th>
+        <th class="name" colspan="6"><?php echo $team->post_title ?></th>
         <?php foreach ($team->results as $result): $our_team = $team->post_title ?>
           <?php include 'views/result.phtml'; ?>
         <?php endforeach ?>

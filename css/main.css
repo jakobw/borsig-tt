@@ -201,6 +201,13 @@ h1, h2, h3 {
   font-style: italic;
   color: #777;
 }
+.team-results .name {
+  font-size: 20px;
+  font-weight: normal;
+  border-bottom: 2px solid #777;
+  padding-bottom: 3px;
+  background-color: #fff;
+}
 #teams li {
   padding: 5px 0;
   list-style: none;
