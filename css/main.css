@@ -193,6 +193,7 @@ h1, h2, h3 {
 }
 .team-results {
   font-size: 14px;
+  background-color: #f0f0f0;
 }
 .team-results td, .team-results th {
   padding: 5px 3px;
