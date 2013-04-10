@@ -202,6 +202,10 @@ h1, h2, h3 {
   font-style: italic;
   color: #777;
 }
+.team-results .name a {
+  color: #333;
+  text-decoration: none;
+}
 .team-results .name {
   font-size: 20px;
   font-weight: normal;
