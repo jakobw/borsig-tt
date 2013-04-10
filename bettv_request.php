@@ -52,7 +52,7 @@ class BettvRequest {
       $results = array();
 
       foreach ($this->_data->Content->Spielplan->children() as $result) {
-        if ((string) $result->Ergebnis !== 'Vorbericht') {
+        if (preg_match('/[0-9]/', (string) $result->Ergebnis)) {
           $home = strpos($result->Heimmannschaft, 'Borsig') !== false;
           $results[] = array(
             'home' => $home,
