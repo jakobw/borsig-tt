@@ -20,7 +20,6 @@ $teams = array_map(function($team) {
 }, get_posts(array(
   'post_type' => 'team',
   'numberposts' => -1,
-  'orderby' => 'title',
   'order' => 'ASC',
 )));
 
