@@ -274,6 +274,7 @@ footer {
   padding-top: 20px;
   text-align: right;
 }
+footer a { margin: 0 10px; }
 .impressum {
   color: #aaa;
 }
