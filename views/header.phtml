@@ -22,6 +22,23 @@
       <script src="<?php echo content_url() ?>/plugins/lightbox-gallery/js/jquery.lightbox.js"></script>
       <script src="<?php echo content_url() ?>/plugins/lightbox-gallery/js/jquery.tooltip.js"></script>
     <?php endif ?>
+    <?php if (is_front_page()): ?>
+      <link rel="stylesheet" href="<?php echo get_bloginfo('template_url') ?>/css/anythingslider.css">
+      <link rel="stylesheet" href="<?php echo get_bloginfo('template_url') ?>/css/theme-metallic.css">
+      <script src="<?php echo get_bloginfo('template_url') ?>/js/jquery.anythingslider.min.js"></script>
+      <script type="text/javascript">
+      $(function () {
+        $('#slider').anythingSlider({
+          // autoPlay: true,
+          theme: 'metallic',
+          delay: 10000,
+          buildArrows: false,
+          buildStartStop: false,
+          resizeContents: false
+        });
+      });
+      </script>
+    <?php endif ?>
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -40,4 +57,7 @@
         </nav>
       </div>
     </header>
+    <?php if (is_front_page()): ?>
+      <?php include 'front_slider.phtml' ?>
+    <?php endif ?>
     <div id="main">
