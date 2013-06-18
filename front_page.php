@@ -24,6 +24,12 @@ $teams = array_map(function($team) {
   'order' => 'ASC',
 )));
 
+$bdays = $wpdb->get_results(
+  "SELECT name, vorname, geburtstag
+  FROM geburtstage
+  WHERE MONTH(geburtstag) = MONTH(NOW())"
+);
+
 include 'views/front_page.phtml';
 
 get_footer();

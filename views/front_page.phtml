@@ -19,6 +19,18 @@
     </div>
   </div>
   <div class="content-right">
+    <img src="<?php echo get_bloginfo('template_url') ?>/images/torte.jpg" class="cake">
+    <h2 class="page_hdln">Geburtstagskinder des Monats</h2>
+    <table id="bday">
+      <?php foreach ($bdays as $bday): ?>
+        <tr>
+          <td><?php echo date('d.m.Y', strtotime($bday->geburtstag)) ?></td>
+          <td><?php echo $bday->vorname ?></td>
+          <td><?php echo $bday->name ?></td>
+        </tr>
+      <?php endforeach ?>
+    </table>
+
     <h2 class="page_hdln">Ergebnisse</h2>
     <table class="team-results zebra">
       <?php foreach ($teams as $team): ?>

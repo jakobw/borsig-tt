@@ -270,6 +270,15 @@ tr:nth-child(2n).result.defeat {
   letter-spacing: 2px;
 }
 
+#bday td {
+  padding: 10px 0 0 10px;
+}
+.cake {
+  margin: 5px 5px 0 0;
+  height: 60px;
+  float: right;
+}
+
 footer {
   padding-top: 20px;
   text-align: right;
