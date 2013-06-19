@@ -27,7 +27,8 @@ $teams = array_map(function($team) {
 $bdays = $wpdb->get_results(
   "SELECT name, vorname, geburtstag
   FROM geburtstage
-  WHERE MONTH(geburtstag) = MONTH(NOW())"
+  WHERE MONTH(geburtstag) = MONTH(NOW())
+  ORDER BY DAY(geburtstag) ASC"
 );
 
 include 'views/front_page.phtml';
