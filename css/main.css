@@ -241,6 +241,7 @@ tr:nth-child(2n).result.defeat {
 }
 
 #frontpage-slider {
+  background: #37c;
   background: -moz-linear-gradient(top, #37c, #26b);
   background: -webkit-linear-gradient(top, #37c, #26b);
   background: -o-linear-gradient(top, #37c, #26b);
