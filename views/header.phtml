@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><?php bloginfo('name'); wp_title() ?></title>
+    <title><?php bloginfo('name'); if (is_front_page()) echo " &raquo; Tischtennis in Berlin Pankow"; else wp_title() ?></title>
     <meta name="description" content="<?php echo get_post_meta($post->ID, 'meta_description', true) ?: '' ?>" />
     <meta name="robots" content="index,follow">
     <meta name="viewport" content="width=device-width">
@@ -21,8 +21,7 @@
       <script src="<?php echo content_url() ?>/plugins/lightbox-gallery/lightbox-gallery.js"></script>
       <script src="<?php echo content_url() ?>/plugins/lightbox-gallery/js/jquery.lightbox.js"></script>
       <script src="<?php echo content_url() ?>/plugins/lightbox-gallery/js/jquery.tooltip.js"></script>
-    <?php endif ?>
-    <?php if (is_front_page()): ?>
+    <?php elseif (is_front_page()): ?>
       <link rel="stylesheet" href="<?php echo get_bloginfo('template_url') ?>/css/anythingslider.css">
       <link rel="stylesheet" href="<?php echo get_bloginfo('template_url') ?>/css/theme-metallic.css">
       <script src="<?php echo get_bloginfo('template_url') ?>/js/jquery.anythingslider.min.js"></script>
