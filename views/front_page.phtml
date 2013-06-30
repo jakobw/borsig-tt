@@ -24,7 +24,7 @@
     <table id="bday">
       <?php foreach ($bdays as $bday): ?>
         <tr>
-          <td><?php echo date('d.m.Y', strtotime($bday->geburtstag)) ?></td>
+          <td><?php echo date('d.m.', strtotime($bday->geburtstag)) ?></td>
           <td><?php echo $bday->vorname ?></td>
           <td><?php echo $bday->name ?></td>
         </tr>
