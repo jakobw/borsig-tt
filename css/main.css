@@ -168,6 +168,9 @@ h1, h2, h3 {
   vertical-align: top;
   text-align: left;
 }
+.board tr td, .board tr th {
+    padding-top: 10px
+}
 
 #news .pre {
   float: left;
