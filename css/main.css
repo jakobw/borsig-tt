@@ -164,6 +164,10 @@ h1, h2, h3 {
 .zebra tr:nth-child(2n+1) {
   background-color: #eee;
 }
+.zebra th {
+  vertical-align: top;
+  text-align: left;
+}
 
 #news .pre {
   float: left;
