@@ -1,2 +1,5 @@
 tmp_xml/*.xml
 views/google_analytics.phtml
+phinx.yml
+composer.lock
+vendor/
