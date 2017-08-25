@@ -203,6 +203,9 @@ h1, h2, h3 {
   float: right;
   width: 400px;
 }
+.team-results .score {
+  white-space: nowrap;
+}
 .team-results td, .team-results th {
   padding: 7px 3px;
 }

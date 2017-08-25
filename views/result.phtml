@@ -15,7 +15,7 @@
 
   <?php if ($result->home): ?>
     <td><?php echo $our_team ?></td>
-    <td class="<?php echo $victoryOrDefeat ?>"><?php echo "$result->score_we : $result->score_they" ?></td>
+    <td class="score <?php echo $victoryOrDefeat ?>"><?php echo "$result->score_we : $result->score_they" ?></td>
     <td><?php echo $result->opponent ?></td>
   <?php else: ?>
     <td><?php echo $result->opponent ?></td>
