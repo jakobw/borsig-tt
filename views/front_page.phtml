@@ -34,7 +34,9 @@
     <h2 class="page_hdln">Ergebnisse</h2>
     <table class="team-results zebra">
       <?php foreach ($teams as $team): ?>
-        <th class="name" colspan="6"><a href="<?php echo get_permalink($team->ID) ?>"><?php echo $team->post_title ?></a></th>
+        <tr>
+          <th class="name" colspan="6"><a href="<?php echo get_permalink($team->ID) ?>"><?php echo $team->post_title ?></a></th>
+        </tr>
         <?php foreach ($team->results as $result): $our_team = $team->post_title ?>
           <?php include 'views/result.phtml'; ?>
         <?php endforeach ?>
