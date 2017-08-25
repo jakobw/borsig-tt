@@ -37,6 +37,7 @@ foreach ($teams as $team) {
           'opponent' => $result['opponent'],
           'date' => $result['date'],
           'home' => $result['home'],
+          'url' => $result['url'],
           'score_we' => $result['home'] ? $score[0] : $score[1],
           'score_they' => $result['home'] ? $score[1] : $score[0],
         )

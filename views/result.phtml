@@ -1,8 +1,26 @@
-<tr class="result <?php echo $result->score_we > $result->score_they ? 'victory' : ($result->score_we == $result->score_they ? '' : 'defeat') ?>">
-  <td class="date"><?php echo date('d.m.Y', strtotime($result->date)) ?>:</td>
-  <td><?php echo $result->home ? $our_team : $result->opponent ?></td>
-  <td><?php echo $result->home ? $result->score_we : $result->score_they ?></td>
-  <td>:</td>
-  <td><?php echo $result->home ? $result->score_they : $result->score_we ?></td>
-  <td><?php echo $result->home ? $result->opponent : $our_team ?></td>
+<tr class="result">
+
+  <td class="date">
+    <!-- TODO: remove conditional once all results have links -->
+    <?php if ($result->url): ?>
+      <a href="<?php echo $result->url ?>">
+        <?php echo date('d.m.Y', strtotime($result->date)) ?>
+      </a>
+    <?php else: ?>
+      <?php echo date('d.m.Y', strtotime($result->date)) ?>
+    <?php endif; ?>
+  </td>
+
+  <?php $victoryOrDefeat = $result->score_we > $result->score_they ? 'victory' : ($result->score_we == $result->score_they ? '' : 'defeat') ?>
+
+  <?php if ($result->home): ?>
+    <td><?php echo $our_team ?></td>
+    <td class="<?php echo $victoryOrDefeat ?>"><?php echo "$result->score_we : $result->score_they" ?></td>
+    <td><?php echo $result->opponent ?></td>
+  <?php else: ?>
+    <td><?php echo $result->opponent ?></td>
+    <td class="<?php echo $victoryOrDefeat ?>"><?php echo "$result->score_they : $result->score_we" ?></td>
+    <td><?php echo $our_team ?></td>
+  <?php endif ?>
+
 </tr>

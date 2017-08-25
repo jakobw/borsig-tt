@@ -59,6 +59,7 @@ class BettvRequest {
             'opponent' => (string) ($home ? $result->Gastmannschaft : $result->Heimmannschaft),
             'date' => (string) $result->Datum,
             'score' => (string) $result->Ergebnis,
+            'url' => (string) $result->Link,
             'nr' => (int) $result->Nr,
           );
         }

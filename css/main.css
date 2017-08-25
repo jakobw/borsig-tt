@@ -203,12 +203,14 @@ h1, h2, h3 {
   float: right;
   width: 400px;
 }
-.team-results {
-  font-size: 14px;
-  background-color: #f0f0f0;
-}
 .team-results td, .team-results th {
-  padding: 5px 3px;
+  padding: 7px 3px;
+}
+.team-results .victory {
+  color: #0a0;
+}
+.team-results .defeat {
+  color: #a00;
 }
 .team-results .date {
   font-style: italic;
@@ -233,19 +235,6 @@ h1, h2, h3 {
 #teams li a, #teams li a:visited {
   color: #333;
   text-decoration: none;
-}
-
-tr:nth-child(2n+1).result.victory {
-  background-color: #ded;
-}
-tr:nth-child(2n).result.victory {
-  background-color: #efe;
-}
-tr:nth-child(2n+1).result.defeat {
-  background-color: #edd;
-}
-tr:nth-child(2n).result.defeat {
-  background-color: #fee;
 }
 
 #frontpage-slider {
