@@ -3,3 +3,4 @@ views/google_analytics.phtml
 phinx.yml
 composer.lock
 vendor/
+wp-config.php

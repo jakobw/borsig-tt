@@ -17,6 +17,8 @@ RUN curl -O https://downloads.wordpress.org/plugin/custom-post-type-ui.1.5.5.zip
 RUN curl -O https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.11.zip \
     && unzip advanced-custom-fields.4.4.11.zip -d wp-content/plugins
 
+COPY wp-config.php .
+
 COPY setup.sh .
 
 CMD ["/bin/bash", "setup.sh"]
