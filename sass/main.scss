@@ -1,0 +1,219 @@
+@import "~bulma";
+
+body {
+  background: #ccc;
+}
+
+#main, #header_center {
+  margin: 0 auto;
+  width: 1000px;
+}
+#main {
+  background: #fff;
+  padding: 0 10px;
+}
+
+#header {
+  height: 50px;
+  background-color: #eee;
+  background: -moz-linear-gradient(top, #fff, #ebebeb);
+  background: -webkit-linear-gradient(top, #fff, #ebebeb);
+  background: -o-linear-gradient(top, #fff, #ebebeb);
+  background: -ms-linear-gradient(top, #fff, #ebebeb);
+  background: linear-gradient(top, #fff, #ebebeb);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  position: relative;
+}
+
+#site {
+  padding-top: 14px;
+  float: left;
+}
+
+#site a {
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  color: #37c;
+  text-decoration: none;
+}
+
+#nav {
+  float: right;
+  height: 50px;
+}
+#nav a {
+  display: block;
+  float: left;
+  padding: 13px 7px 17px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  border-top: 4px solid #ccc;
+  margin: 0;
+  border-position: inside;
+}
+#nav a:hover, #nav .active {
+  border-color: #37c;
+  color: #000;
+}
+
+.page_hdln {
+  padding: 10px 0 0;
+  color: #444;
+}
+.page_hdln a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  margin: 0;
+}
+
+#team .team {
+  width: 33%;
+  float: left;
+}
+#team .table .own {
+  background-color: #acf;
+}
+#team .table {
+  width: 66%;
+  float: right;
+}
+#team table td {
+  padding: 5px;
+}
+#team table .diff {
+  text-align: right;
+}
+.zebra tr:nth-child(2n+1) {
+  background-color: #eee;
+}
+
+.board th {
+  vertical-align: top;
+  text-align: left;
+}
+.board tr td, .board tr th {
+    padding-top: 10px
+}
+
+#news .pre {
+  float: left;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+#news .pre h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+#news .pre .more {
+  text-decoration: none;
+}
+#news .news {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  text-align: justify;
+}
+.news .article-data, .pre .article-data {
+  color: #777;
+  font-style: italic;
+}
+
+#front .content-left {
+  float: left;
+  width: 550px;
+}
+#front .content-right {
+  float: right;
+  width: 400px;
+}
+.team-results .score {
+  white-space: nowrap;
+}
+.team-results td, .team-results th {
+  padding: 7px 3px;
+}
+.team-results .victory {
+  color: #0a0;
+}
+.team-results .defeat {
+  color: #a00;
+}
+.team-results .date {
+  font-style: italic;
+  color: #777;
+}
+.team-results .name a {
+  color: #333;
+  text-decoration: none;
+}
+.team-results .name {
+  font-size: 20px;
+  font-weight: normal;
+  border-bottom: 2px solid #777;
+  padding-bottom: 3px;
+  background-color: #fff;
+}
+#teams li {
+  padding: 5px 0;
+  list-style: none;
+  margin: 0;
+}
+#teams li a, #teams li a:visited {
+  color: #333;
+  text-decoration: none;
+}
+
+#frontpage-slider {
+  background: #37c;
+  background: -moz-linear-gradient(top, #37c, #26b);
+  background: -webkit-linear-gradient(top, #37c, #26b);
+  background: -o-linear-gradient(top, #37c, #26b);
+  background: -ms-linear-gradient(top, #37c, #26b);
+  background: linear-gradient(top, #37c, #26b);
+}
+#slider, #frontpage-slider {
+  height: 350px;
+  border: 0;
+}
+#slider .panel {
+  height: 350px;
+  width: 1000px;
+}
+#frontpage-slider .anythingWindow { border: none; }
+#slider .slide-image {
+  float: left;
+  width: 550px;
+}
+#slider .slide-text {
+  float: left;
+  width: 430px;
+  padding: 40px 0;
+  color: #fff;
+  font: italic 30px Georgia, serif;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+  letter-spacing: 2px;
+}
+
+#bday td {
+  padding: 10px 0 0 10px;
+}
+.cake {
+  margin: 5px 5px 0 0;
+  height: 60px;
+  float: right;
+}
+
+footer {
+  padding-top: 20px;
+  text-align: right;
+}
+footer a { margin: 0 10px; }
+.impressum {
+  color: #aaa;
+}
