@@ -1,23 +1,26 @@
-<h1><?php echo $post->post_title ?></h1>
-<div id="team">
-  <div class="team">
-    <table class="zebra">
-      <h2>Aufstellung</h2>
+<h1 class="title is-3"><?php echo $post->post_title ?></h1>
+
+<div class="columns">
+  <div class="column is-one-third">
+    <h2 class="title is-4">Aufstellung</h2>
+    <table class="table is-fullwidth">
       <?php foreach ($team['members'] as $member): ?>
         <tr>
           <td class="position"><?php echo $member['position'] ?></td>
           <td class="name"><?php echo $member['name'] ?></td>
-          <td class="diff"><?php echo $member['diff'] ?></td>
+          <?php if (strlen($member['diff']) > 1): ?>
+            <td class="diff"><?php echo $member['diff'] ?></td>
+          <?php endif; ?>
         </tr>
       <?php endforeach ?>
     </table>
   </div>
 
-  <div class="table">
-    <h2>Tabelle</h2>
-    <table class="zebra">
+  <div class="column is-two-thirds">
+    <h2 class="title is-4">Tabelle</h2>
+    <table class="table is-fullwidth">
       <?php foreach ($table as $team): ?>
-        <tr class="<?php if (preg_match('/borsig/i', $team['name'])): ?>own<?php endif ?>">
+        <tr class="<?php if (preg_match('/borsig/i', $team['name'])): ?>is-selected<?php endif ?>">
           <td><?php echo $team['name'] ?></td>
           <td><?php echo $team['diff_points'] ?></td>
           <td><?php echo $team['diff_matches'] ?></td>
@@ -25,13 +28,11 @@
       <?php endforeach ?>
     </table>
   </div>
-
-  <div class="clearfix"></div>
-
-  <h2>Aktuelle Ergebnisse</h2>
-  <table class="zebra">
-    <?php foreach ($results as $result): $our_team = $post->post_title ?>
-      <?php include 'views/result.phtml' ?>
-    <?php endforeach ?>
-  </table>
 </div>
+
+<h2 class="title is-4">Aktuelle Ergebnisse</h2>
+<table class="table is-fullwidth">
+  <?php foreach ($results as $result): $our_team = $post->post_title ?>
+    <?php include 'views/result.phtml' ?>
+  <?php endforeach ?>
+</table>

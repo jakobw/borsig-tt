@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,52 +7,48 @@
     <meta name="robots" content="index,follow">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" href="<?php echo get_bloginfo('template_url') ?>/css/normalize.min.css">
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_url') ?>/css/styles.css">
 
-    <script src="<?php echo get_bloginfo('template_url') ?>/js/modernizr-2.6.1-respond-1.1.0.min.js"></script>
-    <script src="<?php echo get_bloginfo('template_url') ?>/js/jquery-1.8.2.min.js"></script>
     <?php if (strpos($post->post_content,'[gallery') !== false): ?>
+      <script src="<?php echo get_bloginfo('template_url') ?>/js/jquery-1.8.2.min.js"></script>
       <link rel="stylesheet" type="text/css" href="<?php echo content_url() ?>/plugins/lightbox-gallery/lightbox-gallery.css">
       <script src="<?php echo content_url() ?>/plugins/lightbox-gallery/lightbox-gallery.js"></script>
       <script src="<?php echo content_url() ?>/plugins/lightbox-gallery/js/jquery.lightbox.js"></script>
       <script src="<?php echo content_url() ?>/plugins/lightbox-gallery/js/jquery.tooltip.js"></script>
-    <?php elseif (is_front_page()): ?>
-      <link rel="stylesheet" href="<?php echo get_bloginfo('template_url') ?>/css/anythingslider.css">
-      <script src="<?php echo get_bloginfo('template_url') ?>/js/jquery.anythingslider.min.js"></script>
-      <script type="text/javascript">
-      $(function () {
-        $('#slider').anythingSlider({
-          autoPlay: true,
-          theme: 'metallic',
-          delay: 6000,
-          buildArrows: false,
-          buildStartStop: false,
-          resizeContents: false
-        });
-      });
-      </script>
     <?php endif ?>
   </head>
   <body>
     <?php include 'views/google_analytics.phtml' ?>
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-    <![endif]-->
-    <header id="header">
-      <div id="header_center">
-        <figure id="logo"></figure>
-        <div id="site"><a href="<?php echo get_bloginfo('siteurl') ?>">SG Bergmann Borsig e.V.</a></div>
-        <nav id="nav">
-          <?php foreach (wp_get_nav_menu_items('main-menu') as $item): ?>
-            <a href="<?php echo $item->url ?>" class="<?php echo $post->ID == $item->object_id ? 'active' : '' ?>">
-              <?php echo $item->title ?>
-            </a>
-          <?php endforeach ?>
-        </nav>
+
+    <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="<?php echo get_bloginfo('siteurl') ?>">
+            <img src="<?php echo get_template_directory_uri() . '/images/racket.png' ?>">
+            SG Bergmann Borsig e.V.
+          </a>
+
+          <a class="navbar-burger" id="toggle-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+
+        <div class="navbar-menu" id="main-nav">
+          <div class="navbar-end">
+            <?php foreach (wp_get_nav_menu_items('main-menu') as $item): ?>
+              <a href="<?php echo $item->url ?>" class="navbar-item <?php echo $post->ID == $item->object_id ? 'is-active' : '' ?>">
+                <?php echo $item->title ?>
+              </a>
+            <?php endforeach ?>
+          </div>
+        </div>
       </div>
-    </header>
+    </nav>
+
     <?php if (is_front_page()): ?>
       <?php include 'front_slider.phtml' ?>
     <?php endif ?>
-    <div id="main">
+
+    <div class="main-content container">

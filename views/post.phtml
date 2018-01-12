@@ -1,12 +1,12 @@
-<article class="news">
-  <header>
-    <h2><?php echo $post->post_title ?></h2>
-    <div class="article-data">
+<article class="news article">
+  <header class="">
+    <h2 class="title is-4"><?php echo $post->post_title ?></h2>
+    <div class="article-info">
       von <span class="author"><?php echo the_author_meta('nickname', $post->post_author) ?></span>
       <time class="date" pubdate datetime="<?php echo $post->post_date ?>">am <?php echo get_the_date() ?></time>
     </div>
   </header>
-  <div class="article-content">
+  <div class="content">
     <?php echo apply_filters('the_content', $post->post_content) ?>
   </div>
 </article>

@@ -1,27 +1,26 @@
-<div id="front">
-  <div class="content-left">
-    <div id="news">
-      <h2 class="page_hdln"><a href="/news">News</a></h2>
-      <?php foreach ($posts as $post): ?>
-        <article class="pre">
-          <header>
-            <h3><a href="<?php echo get_permalink($post->ID) ?>"><?php echo $post->post_title ?></a></h3>
-            <div class="article-data">
-              von <span class="author"><?php echo the_author_meta('nickname', $post->post_author) ?></span>
-              <time class="date" pubdate datetime="<?php echo $post->post_date ?>">am <?php echo get_the_date() ?></time>
-            </div>
-          </header>
-          <p class="pre-content">
-            <?php echo apply_filters('the_excerpt', wp_trim_words($post->post_content)) ?>
-          </p>
-        </article>
-      <?php endforeach ?>
-    </div>
+<div class="columns">
+  <div class="column is-7">
+    <h2 class="title is-3"><a href="/news">News</a></h2>
+
+    <?php foreach ($posts as $news): ?>
+      <article class="article">
+        <header>
+          <h3 class="title is-5"><a href="<?php echo get_permalink($news->ID) ?>"><?php echo $news->post_title ?></a></h3>
+          <div class="article-info">
+            von <span class="author"><?php echo the_author_meta('nickname', $news->post_author) ?></span>
+            <time class="date" pubdate datetime="<?php echo $news->post_date ?>">am <?php echo get_the_date() ?></time>
+          </div>
+        </header>
+        <p class="article-content">
+          <?php echo apply_filters('the_excerpt', wp_trim_words($news->post_content)) ?>
+        </p>
+      </article>
+    <?php endforeach ?>
   </div>
-  <div class="content-right">
-    <img src="<?php echo get_bloginfo('template_url') ?>/images/torte.jpg" class="cake">
-    <h2 class="page_hdln">Geburtstagskinder des Monats</h2>
-    <table id="bday">
+
+  <div class="column is-5">
+    <h2 class="title is-5">🎉 Geburtstagskinder des Monats 🎉</h2>
+    <table class="table">
       <?php foreach ($bdays as $bday): ?>
         <tr>
           <td><?php echo date('d.m.', strtotime($bday->geburtstag)) ?></td>
@@ -31,17 +30,23 @@
       <?php endforeach ?>
     </table>
 
-    <h2 class="page_hdln">Ergebnisse</h2>
-    <table class="team-results zebra">
-      <?php foreach ($teams as $team): ?>
-        <tr>
-          <th class="name" colspan="6"><a href="<?php echo get_permalink($team->ID) ?>"><?php echo $team->post_title ?></a></th>
-        </tr>
-        <?php foreach ($team->results as $result): $our_team = $team->post_title ?>
-          <?php include 'views/result.phtml'; ?>
+    <h2 class="title is-5">Ergebnisse</h2>
+    <div>
+      <table class="results table is-fullwidth">
+        <?php foreach ($teams as $team): ?>
+          <tr>
+            <th class="name" colspan="6"><a href="<?php echo get_permalink($team->ID) ?>"><?php echo $team->post_title ?></a></th>
+          </tr>
+          <?php foreach ($team->results as $result): $our_team = $team->post_title ?>
+            <?php include 'views/result.phtml'; ?>
+          <?php endforeach ?>
         <?php endforeach ?>
-      <?php endforeach ?>
-    </table>
+      </table>
+    </div>
+
+    <?php if ($post->post_content): ?>
+      <h2 class="title is-5">Downloads</h2>
+      <?php echo $post->post_content ?>
+    <?php endif; ?>
   </div>
-  <div class="clearfix"></div>
 </div>
