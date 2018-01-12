@@ -4,6 +4,5 @@ phinx.yml
 composer.lock
 vendor/
 wp-config.php
-bundle.js
 node_modules/
 package-lock.json
