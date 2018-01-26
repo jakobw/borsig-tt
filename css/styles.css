@@ -6480,7 +6480,7 @@ body {
   .navbar a.navbar-item.is-active {
     background-color: whitesmoke; }
   .navbar .navbar-brand .navbar-item {
-    color: #3273dc;
+    color: #0064c8;
     font-weight: bold; }
 
 .main-content {
@@ -6509,7 +6509,7 @@ body {
     white-space: nowrap; }
 
 .front-slider {
-  background: linear-gradient(to bottom, #37c, #26b);
+  background: #0064c8;
   overflow: hidden; }
   .front-slider .slider-item.fake-item {
     visibility: hidden;

@@ -1,5 +1,7 @@
 @import "~bulma";
 
+$primary: #0064c8;
+
 html,
 body {
     height: 100%;
@@ -20,7 +22,7 @@ body {
 
   .navbar-brand {
     .navbar-item {
-      color: $link;
+      color: $primary;
       font-weight: bold;
     }
   }
@@ -66,7 +68,7 @@ body {
 }
 
 .front-slider {
-  background: linear-gradient(to bottom, #37c, #26b);
+  background: $primary;
   overflow: hidden;
 
   .slider-item.fake-item {
