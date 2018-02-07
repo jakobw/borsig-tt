@@ -8,7 +8,7 @@
           <h3 class="title is-5"><a href="<?php echo get_permalink($news->ID) ?>"><?php echo $news->post_title ?></a></h3>
           <div class="article-info">
             von <span class="author"><?php echo the_author_meta('nickname', $news->post_author) ?></span>
-            <time class="date" pubdate datetime="<?php echo $news->post_date ?>">am <?php echo get_the_date() ?></time>
+            <time class="date" pubdate datetime="<?php echo $news->post_date ?>">am <?php echo get_the_date('d. F Y', $news->ID) ?></time>
           </div>
         </header>
         <p class="article-content">
