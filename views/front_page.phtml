@@ -21,11 +21,10 @@
   <div class="column is-5">
     <h2 class="title is-5">🎉 Geburtstagskinder des Monats 🎉</h2>
     <table class="table">
-      <?php foreach ($bdays as $bday): ?>
+      <?php foreach ($bdays as list($name, $bday)): ?>
         <tr>
-          <td><?php echo date('d.m.', strtotime($bday->geburtstag)) ?></td>
-          <td><?php echo $bday->vorname ?></td>
-          <td><?php echo $bday->name ?></td>
+          <td><?php echo date('d.m.', strtotime($bday)) ?></td>
+          <td><?php echo $name ?></td>
         </tr>
       <?php endforeach ?>
     </table>

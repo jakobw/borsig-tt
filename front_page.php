@@ -24,12 +24,16 @@ $teams = array_map(function($team) {
   'order' => 'ASC',
 )));
 
-$bdays = $wpdb->get_results(
-  "SELECT name, vorname, geburtstag
-  FROM geburtstage
-  WHERE MONTH(geburtstag) = MONTH(NOW())
-  ORDER BY DAY(geburtstag) ASC"
+$members = array_map(
+  function($member) {
+    return array_map(function($d) { return trim($d); }, explode(',', $member));
+  },
+  explode("\n", file_get_contents(__DIR__ . '/birthdays.csv')) ?: []
 );
+$bdays = array_filter($members, function($member) {
+  list(, $birthday) = $member;
+  return date('m') === date('m', strtotime($birthday));
+});
 
 include 'views/front_page.phtml';
 
