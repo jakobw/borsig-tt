@@ -32,7 +32,7 @@ $members = array_map(
 );
 $bdays = array_filter($members, function($member) {
   list(, $birthday) = $member;
-  return date('m') === date('m', strtotime($birthday));
+  return $birthday && date('m') === date('m', strtotime($birthday));
 });
 usort($bdays, function($a, $b) {
   return $a[1] - $b[1];
