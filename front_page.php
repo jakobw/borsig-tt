@@ -25,8 +25,13 @@ $teams = array_map(function($team) {
 )));
 
 $members = array_map(
-  function($member) {
-    return array_map(function($d) { return trim($d); }, explode(',', $member));
+  function($line) {
+    $member = array_map(function($d) { return trim($d); }, explode(',', $line));
+    $name = explode(' ', $member[0]);
+    $last_name_index = count($name) - 1;
+    $name[$last_name_index] = "{$name[$last_name_index][0]}.";
+
+    return [implode(' ', $name), $member[1]];
   },
   explode("\n", file_get_contents(__DIR__ . '/birthdays.csv')) ?: []
 );
