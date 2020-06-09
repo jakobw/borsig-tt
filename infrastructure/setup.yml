@@ -1,0 +1,8 @@
+- hosts: all
+  name: Set up borsig-tt.de including wordpress, plugins, and the custom theme
+  become: yes
+  tasks:
+    - name: create file saying hello world
+      copy:
+        content: hello world
+        dest: /tmp/helloworld.txt
