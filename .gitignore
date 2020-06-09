@@ -7,3 +7,4 @@ wp-config.php
 node_modules/
 package-lock.json
 birthdays.csv
+infrastructure/.vagrant
