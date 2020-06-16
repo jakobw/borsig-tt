@@ -2,7 +2,47 @@
   name: Set up borsig-tt.de including wordpress, plugins, and the custom theme
   become: yes
   tasks:
-    - name: create file saying hello world
-      copy:
-        content: hello world
-        dest: /tmp/helloworld.txt
+    - name: Install required packages
+      package:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - "python3"
+        - "python3-pip"
+        - "docker.io"
+        - "composer"
+        - "git"
+
+    - name: Install python docker-compose
+      pip:
+        name: docker-compose
+
+    - name: Create project dir
+      file:
+        path: "{{ PROJECT_DIR }}"
+        state: directory
+
+    - name: Set up docker-compose.yml
+      template:
+        src: templates/docker-compose.yml.j2
+        dest: "{{ PROJECT_DIR }}/docker-compose.yml"
+
+    - name: docker-compose up
+      docker_compose:
+          project_src: "{{ PROJECT_DIR }}"
+
+# TODO
+# 1.
+# clone repo
+# composer install
+# 2.
+# mount theme
+# 3.
+# install required plugin
+# use proper passwords
+# 4.
+# set up match cron job
+# 5.
+# set up update process (repo, wp, plugins)
+# 6.
+# set up backup process
