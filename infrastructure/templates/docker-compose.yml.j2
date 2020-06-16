@@ -19,6 +19,8 @@ services:
      ports:
        - "8000:80"
      restart: always
+     volumes:
+      - "./{{ REPO_DIR_NAME }}:/var/www/html/wp-content/themes/borsig"
      environment:
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_USER: wordpress

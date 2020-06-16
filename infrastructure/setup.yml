@@ -7,11 +7,11 @@
         name: "{{ item }}"
         state: present
       loop:
-        - "python3"
-        - "python3-pip"
-        - "docker.io"
-        - "composer"
-        - "git"
+        - python3
+        - python3-pip
+        - docker.io
+        - composer
+        - git
 
     - name: Install python docker-compose
       pip:
@@ -21,6 +21,12 @@
       file:
         path: "{{ PROJECT_DIR }}"
         state: directory
+
+    - name: Clone repo
+      git:
+          repo: https://github.com/jakobw/borsig-tt.git
+          dest: "{{ REPO_DIR }}"
+          version: master
 
     - name: Set up docker-compose.yml
       template:
@@ -32,17 +38,12 @@
           project_src: "{{ PROJECT_DIR }}"
 
 # TODO
-# 1.
-# clone repo
-# composer install
-# 2.
-# mount theme
-# 3.
-# install required plugin
-# use proper passwords
-# 4.
-# set up match cron job
-# 5.
-# set up update process (repo, wp, plugins)
-# 6.
-# set up backup process
+# Important:
+# - install required plugins
+# - use proper passwords
+# - composer install & phinx
+
+# Later:
+# - set up match cron job
+# - set up update process (repo, wp, plugins)
+# - set up backup process
