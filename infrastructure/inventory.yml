@@ -8,3 +8,9 @@ all:
     PROJECT_DIR: /srv/borsig
     REPO_DIR_NAME: borsig-theme
     REPO_DIR: "{{ PROJECT_DIR }}/{{ REPO_DIR_NAME }}"
+
+    MYSQL_HOST: db # as defined in docker-compose.yml
+    MYSQL_DB_NAME: wordpress
+    MYSQL_USER: wordpress
+
+    CONTAINER_THEME_DIR: /var/www/html/wp-content/themes/borsig

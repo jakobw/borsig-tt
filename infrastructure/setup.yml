@@ -33,15 +33,30 @@
         src: templates/docker-compose.yml.j2
         dest: "{{ PROJECT_DIR }}/docker-compose.yml"
 
+    - name: Copy WordPress Dockerfile
+      copy:
+        src: files/Dockerfile
+        dest: "{{ PROJECT_DIR }}"
+
     # should be run inside a container so that ideally the host doesn't even need php
     - name: Composer install
       composer:
         command: install
         working_dir: "{{ REPO_DIR }}"
 
+    - name: Set up phinx.yml
+      template:
+        src: templates/phinx.yml.j2
+        dest: "{{ REPO_DIR }}/phinx.yml"
+
+    - name: Run phinx db migrations
+      shell: "docker-compose run --rm -w {{ CONTAINER_THEME_DIR }} wordpress vendor/bin/phinx migrate -e production"
+      args:
+        chdir: "{{ PROJECT_DIR }}"
+
     - name: docker-compose up
       docker_compose:
-          project_src: "{{ PROJECT_DIR }}"
+        project_src: "{{ PROJECT_DIR }}"
 
 # TODO
 # Important:
