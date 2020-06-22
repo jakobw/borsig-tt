@@ -33,6 +33,12 @@
         src: templates/docker-compose.yml.j2
         dest: "{{ PROJECT_DIR }}/docker-compose.yml"
 
+    # should be run inside a container so that ideally the host doesn't even need php
+    - name: Composer install
+      composer:
+        command: install
+        working_dir: "{{ REPO_DIR }}"
+
     - name: docker-compose up
       docker_compose:
           project_src: "{{ PROJECT_DIR }}"
