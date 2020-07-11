@@ -21,6 +21,7 @@ services:
      restart: always
      volumes:
       - "./{{ REPO_DIR_NAME }}:{{ CONTAINER_THEME_DIR }}"
+      - ./plugins:/var/www/html/wp-content/plugins
      environment:
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_USER: {{ MYSQL_USER }}

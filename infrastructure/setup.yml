@@ -24,9 +24,24 @@
 
     - name: Clone repo
       git:
-          repo: https://github.com/jakobw/borsig-tt.git
-          dest: "{{ REPO_DIR }}"
-          version: master
+        repo: https://github.com/jakobw/borsig-tt.git
+        dest: "{{ REPO_DIR }}"
+        version: master
+
+    - name: Create WordPress plugins dir
+      file:
+        path: "{{ PROJECT_DIR }}/plugins"
+        state: directory
+
+    - name: Install WordPress plugins
+      unarchive:
+        remote_src: true
+        src: "{{ item }}"
+        dest: "{{ PROJECT_DIR}}/plugins/"
+      loop:
+        - https://downloads.wordpress.org/plugin/custom-post-type-ui.1.7.4.zip
+        - https://downloads.wordpress.org/plugin/lightbox-gallery.0.9.2.zip
+        - https://downloads.wordpress.org/plugin/advanced-custom-fields.5.8.12.zip
 
     - name: Set up docker-compose.yml
       template:
@@ -57,11 +72,9 @@
     - name: docker-compose up
       docker_compose:
         project_src: "{{ PROJECT_DIR }}"
-
 # TODO
 # Important:
 # - install required plugins
-# - composer install & phinx
 
 # Later:
 # - set up match cron job
