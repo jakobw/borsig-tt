@@ -17,7 +17,7 @@ services:
        - db
      build: .
      ports:
-       - "8000:80"
+       - "80:80"
      restart: always
      volumes:
       - "./{{ REPO_DIR_NAME }}:{{ CONTAINER_THEME_DIR }}"
