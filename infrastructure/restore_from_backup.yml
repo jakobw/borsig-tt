@@ -1,0 +1,17 @@
+- hosts: all
+  name: Restore borsig-tt.de db from a backup file
+  become: yes
+  tasks:
+    - name: Copy backup file
+      copy:
+        src: "{{ backup_file }}"
+        dest: "{{ PROJECT_DIR }}/backup.sql"
+    - name: Restore from backup
+      shell: docker exec -i $(docker-compose ps -q db) sh -c 'exec mysql -u{{ MYSQL_USER }} -p"{{ MYSQL_PASS }}" {{ MYSQL_DB_NAME }}' < backup.sql
+      args:
+        chdir: "{{ PROJECT_DIR }}"
+    - name: Remove backup file
+      file:
+        path: "{{ PROJECT_DIR }}/backup.sql"
+        state: absent
+
