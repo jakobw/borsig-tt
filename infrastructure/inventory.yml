@@ -13,4 +13,4 @@ all:
     MYSQL_DB_NAME: wordpress
     MYSQL_USER: wordpress
 
-    CONTAINER_THEME_DIR: /var/www/html/wp-content/themes/borsig
+    CONTAINER_THEME_DIR: /var/www/html/wp-content/themes/borsig-tt
