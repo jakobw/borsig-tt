@@ -28,6 +28,11 @@
         dest: "{{ REPO_DIR }}"
         version: master
 
+    - name: Create WordPress uploads dir
+      file:
+        path: "{{ PROJECT_DIR }}/uploads"
+        state: directory
+
     - name: Create WordPress plugins dir
       file:
         path: "{{ PROJECT_DIR }}/plugins"
@@ -73,10 +78,7 @@
       docker_compose:
         project_src: "{{ PROJECT_DIR }}"
 # TODO
-# Important:
-# - install required plugins
-
 # Later:
-# - set up match cron job
+# - set up match results cron job
 # - set up update process (repo, wp, plugins)
 # - set up backup process
