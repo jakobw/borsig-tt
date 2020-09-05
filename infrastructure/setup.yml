@@ -29,6 +29,11 @@
         dest: "{{ REPO_DIR }}"
         version: master
 
+    - name: Copy birthdays list
+      copy:
+        src: ../birthdays.csv
+        dest: "{{ REPO_DIR }}/birthdays.csv"
+
     - name: Create WordPress uploads dir
       file:
         path: "{{ PROJECT_DIR }}/uploads"
