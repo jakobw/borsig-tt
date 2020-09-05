@@ -3,16 +3,16 @@
   become: yes
   tasks:
     - name: Install required packages
-      package:
-        name: "{{ item }}"
+      apt:
+        name:
+          - python3
+          - python3-pip
+          - docker.io
+          - composer
+          - git
+          - unzip
         state: present
-      loop:
-        - python3
-        - python3-pip
-        - docker.io
-        - composer
-        - git
-        - unzip
+        update_cache: yes
 
     - name: Install python docker-compose
       pip:
