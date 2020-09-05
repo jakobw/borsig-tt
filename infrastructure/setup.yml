@@ -12,6 +12,7 @@
         - docker.io
         - composer
         - git
+        - unzip
 
     - name: Install python docker-compose
       pip:
