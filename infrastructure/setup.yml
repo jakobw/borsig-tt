@@ -80,6 +80,12 @@
       args:
         chdir: "{{ PROJECT_DIR }}"
 
+    - name: Set up cronjob for result updates
+      cron:
+        name: "fetch results"
+        job: "cd {{ PROJECT_DIR }} && docker-compose exec wordpress php /var/www/html/wp-content/themes/borsig-tt/bin/fetch_results.php"
+        special_time: hourly
+
     - name: docker-compose up
       docker_compose:
         project_src: "{{ PROJECT_DIR }}"
